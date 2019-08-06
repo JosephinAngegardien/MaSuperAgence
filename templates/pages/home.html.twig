@@ -1,0 +1,38 @@
+
+{% extends "base.html.twig" %}
+
+{% block title "Agence lorem ipsum" %}
+
+{% block body %}
+
+<div class="jumbotron text-center">
+    <h1>Agence lorem ipsum</h1>
+    <p>Les Passeriformes (ou passériformes en français) sont le plus grand ordre de la classe des oiseaux. Le taxon regroupe en effet 
+    plus de la moitié des espèces d'oiseaux. Les oiseaux de cet ordre sont dénommés passereaux de manière générique, mais sont également 
+    souvent qualifiés d'oiseaux chanteurs d'après leur appellation « songbirds » par les anglophones. Ils étaient autrefois aussi appelés 
+    oiseaux percheurs. </p>
+</div>
+
+<div class="container">
+    <h2>Les derniers biens</h2>
+    <div class="row flex">
+        {% for property in properties %}
+
+        <div class="col-3">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="#">{{  property.title  }}</a>
+                    </h5>
+                    <p class="card-text">{{ property.city }} ({{ property.postalCode }})</p>
+                    <div class="text-primary" style="font-weight: bold;font-size: 2rem"> {{ property.formattedPrice }} €</div>
+                </div>
+            </div>
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+
+{% endblock %}
+
